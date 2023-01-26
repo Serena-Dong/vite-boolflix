@@ -5,14 +5,15 @@ export default {
         return {
             searchTerm: ''
         }
-    }
+    },
+    emits: ['searching-bar']
 }
 </script>
 
 <template>
     <form action="">
-        <input v-model="searchTerm" type="text">
-        <button>search</button>
+        <input v-model.trim="searchTerm" @keyup.enter="$emit('searching-bar')" type="text">
+        <button type="submit">search</button>
     </form>
 </template>
 

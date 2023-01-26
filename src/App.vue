@@ -10,12 +10,17 @@ export default {
 
         }
     },
-    components: { AppHeader, AppMain }
+    components: { AppHeader, AppMain },
+    methods: {
+        filterContents(name) {
+            console.log(name)
+        }
+    }
 }
 </script>
 
 <template>
-    <AppHeader></AppHeader>
+    <AppHeader @searching-bar="filterContents"></AppHeader>
     <AppMain></AppMain>
 
 </template>
