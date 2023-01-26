@@ -7,13 +7,14 @@ import AppMain from './components/AppMain.vue';
 export default {
     data() {
         return {
-
+            store,
+            urlMovies: store.apiUri + '/search/movie?api_key=' + store.apiKey + '&query='
         }
     },
     components: { AppHeader, AppMain },
     methods: {
         filterContents(name) {
-            console.log(name)
+            console.log(this.urlMovies)
         }
     }
 }
