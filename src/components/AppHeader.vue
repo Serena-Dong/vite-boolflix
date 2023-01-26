@@ -1,12 +1,17 @@
 <script>
 export default {
-    name: 'AppHeader'
+    name: 'AppHeader',
+    data() {
+        return {
+            searchTerm: ''
+        }
+    }
 }
 </script>
 
 <template>
     <form action="">
-        <input type="text">
+        <input v-model="searchTerm" type="text">
         <button>search</button>
     </form>
 </template>
