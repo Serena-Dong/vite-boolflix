@@ -32,6 +32,9 @@ export default {
             this.term = searchTerm
         },
         searchMovies() {
+            if (!this.term) {
+                store.movies = []
+            }
             axios.get(`${api.baseUri}/search/movie`, this.parameters)
                 .then(res => {
                     store.movies = res.data.results
@@ -42,8 +45,9 @@ export default {
 </script>
 
 <template>
-    <AppHeader @searching-bar="updateTerm" @form-submit="searchContent"></AppHeader>
-    <AppMain></AppMain>
+    <AppHeader @searching-bar="updateTerm" @form-submit="searchMovies"></AppHeader>
+    <AppMain>
+    </AppMain>
 
 </template>
 
