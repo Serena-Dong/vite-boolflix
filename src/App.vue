@@ -31,7 +31,7 @@ export default {
         updateTerm(searchTerm) {
             this.term = searchTerm
         },
-        searchContent() {
+        searchMovies() {
             axios.get(`${api.baseUri}/search/movie`, this.parameters)
                 .then(res => {
                     store.movies = res.data.results
