@@ -11,7 +11,7 @@ export default {
 </script>
 
 <template>
-    <input v-model.trim="searchTerm" @keyup.enter="$emit('searching-bar', searchTerm)" type="text">
+    <input v-model.trim="searchTerm" @keyup="$emit('searching-bar', searchTerm)" type="text">
     <button type="submit">search</button>
 </template>
 

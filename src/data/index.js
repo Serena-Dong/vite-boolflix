@@ -3,4 +3,4 @@ const api = {
     baseUri: 'https://api.themoviedb.org/3'
 }
 
-export { api }
+export { api };

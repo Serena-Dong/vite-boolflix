@@ -1,7 +1,7 @@
 <script>
 import axios from 'axios'
 import { store } from './data/store'
-import { index } from './data/index'
+import { api } from './data/index'
 
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
@@ -10,6 +10,7 @@ export default {
     data() {
         return {
             store,
+            api,
             apiUriMovies: store.apiUri + '/search/movie?api_key=' + store.apiKey + '&query='
         }
     },
