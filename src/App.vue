@@ -1,5 +1,7 @@
 <script>
+import axios from 'axios'
 import { store } from './data/store'
+import { index } from './data/index'
 
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
