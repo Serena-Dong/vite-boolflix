@@ -7,23 +7,34 @@ import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 
 export default {
+    name: 'Boolflix',
+    components: { AppHeader, AppMain },
     data() {
         return {
             store,
             api,
-            apiUriMovies: store.apiUri + '/search/movie?api_key=' + store.apiKey + '&query='
+            term: ''
         }
     },
-    components: { AppHeader, AppMain },
+    computed: {
+        parameters() {
+            return {
+                params: {
+                    language: api.language,
+                    api_key: api.key,
+                    query: this.term
+                }
+            }
+        }
+    },
     methods: {
-        filterContents(name) {
-
-            const urlMovie = store.apiUriMovies + name;
-
-            axios.get(urlMovie)
+        updateTerm(searchTerm) {
+            this.term = searchTerm
+        },
+        searchContent() {
+            axios.get(`${api.baseUri}/search/movie`, this.parameters)
                 .then(res => {
-                    store.movies = res.results
-                    console.log(store.movies)
+                    store.movies = res.data.results
                 })
         }
     }
@@ -31,7 +42,7 @@ export default {
 </script>
 
 <template>
-    <AppHeader @searching-bar="filterContents"></AppHeader>
+    <AppHeader @searching-bar="updateTerm" @form-submit="searchContent"></AppHeader>
     <AppMain></AppMain>
 
 </template>
