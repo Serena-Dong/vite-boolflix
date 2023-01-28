@@ -17,7 +17,7 @@ export default {
             <!-- LOGO -->
             <div class="logo">
                 <a href="">
-                    <h1>BOOLFLIX</h1>
+                    <h1>B O O L F L I X</h1>
                 </a>
             </div>
 

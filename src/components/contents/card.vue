@@ -42,20 +42,37 @@ export default {
 
 <template>
     <ul>
-        <li><img :src="imgSrc" :alt="title"></li>
-        <li>
-            <h2>{{ title }}</h2>
-        </li>
-        <li>{{ originalTitle }} </li>
-        <li>
-            <img v-if="hasFlag" :src="flagSrc" :alt="this.content.original_language">
-            <p v-else>{{ this.content.original_language }}</p>
-        </li>
-        <li>{{ rating }}</li>
+        <div class="poster">
+            <li><a href=""><img :src="imgSrc" :alt="title"></a></li>
+        </div>
+        <div class="details">
+            <li>
+                <h2>{{ title }}</h2>
+            </li>
+            <li>{{ originalTitle }} </li>
+            <li>
+                <img v-if="hasFlag" :src="flagSrc" :alt="this.content.original_language">
+                <p v-else>{{ this.content.original_language }}</p>
+            </li>
+            <li>{{ rating }}
+
+            </li>
+        </div>
 
     </ul>
 </template>
 
-<style>
+<style lang="scss">
+.details {
+    display: block;
+    width: 320px;
+    height: 500px;
+    background-color: white;
+}
 
+.details>*,
+h2,
+p {
+    color: black;
+}
 </style>
