@@ -13,9 +13,15 @@ export default {
 <template>
     <header>
         <div class="container">
+
+            <!-- LOGO -->
             <div class="logo">
-                <h1>BOOLFLIX</h1>
+                <a href="">
+                    <h1>BOOLFLIX</h1>
+                </a>
             </div>
+
+            <!-- SEARCH-BAR  -->
             <form @submit.prevent="$emit('form-submit')">
                 <input v-model.trim="searchTerm" @keyup="$emit('search-term', searchTerm)" type="text"
                     placeholder="Search">
@@ -61,7 +67,7 @@ input {
     height: 2rem;
 
     padding: 0.5rem;
-    margin-right: 0.5rem;
+    margin-right: 0.3rem;
 
 }
 
