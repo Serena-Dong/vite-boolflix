@@ -1,6 +1,13 @@
 <script>
+import { api } from '../data/index'
+
 export default {
     name: 'card',
+    data() {
+        return {
+            api
+        }
+    },
     props: {
         content: Object
     },
@@ -18,6 +25,12 @@ export default {
         flagSrc() {
             const url = new URL(`../assets/img/${this.content.original_language}.png`, import.meta.url);
             return url.href
+        },
+        imgSrc() {
+            const size = 'w342/';
+            const url = api.imgBaseUri + size + this.content.poster_path;
+
+            return url
         }
     }
 }
@@ -25,6 +38,7 @@ export default {
 
 <template>
     <ul>
+        <li><img :src="imgSrc" :alt="title"></li>
         <li>{{ title }}</li>
         <li>{{ originalTitle }} </li>
         <li>
