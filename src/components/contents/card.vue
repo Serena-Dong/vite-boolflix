@@ -1,5 +1,5 @@
 <script>
-import { api } from '../data/index'
+import { api } from '../../data/index'
 
 export default {
     name: 'card',
@@ -23,7 +23,7 @@ export default {
             return flags.includes(this.content.original_language)
         },
         flagSrc() {
-            const url = new URL(`../assets/img/${this.content.original_language}.png`, import.meta.url);
+            const url = new URL(`../../assets/img/${this.content.original_language}.png`, import.meta.url);
             return url.href
         },
         imgSrc() {

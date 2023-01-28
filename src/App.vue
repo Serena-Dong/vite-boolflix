@@ -4,11 +4,11 @@ import { store } from './data/store'
 import { api } from './data/index'
 
 import AppHeader from './components/AppHeader.vue';
-import card from './components/card.vue';
+import AppMain from './components/AppMain.vue';
 
 export default {
     name: 'Boolflix',
-    components: { AppHeader, card },
+    components: { AppHeader, AppMain },
     data() {
         return {
             store,
@@ -51,22 +51,8 @@ export default {
 </script>
 
 <template>
-    <AppHeader @searching-bar="updateTerm" @form-submit="searchContent"></AppHeader>
-
-
-
-    <main>
-
-        <!-- MOVIE SECTION -->
-        <h1>Movies</h1>
-        <card v-for="movie in store.movies" :key="movie.id" :content="movie"></card>
-
-        <!-- TV SERIES SECTION -->
-        <h1>TV Series</h1>
-        <card v-for="serie in store.series" :key="serie.id" :content="serie"></card>
-
-    </main>
-
+    <AppHeader @search-term="updateTerm" @form-submit="searchContent"></AppHeader>
+    <AppMain></AppMain>
 </template>
 
 <style scoped>

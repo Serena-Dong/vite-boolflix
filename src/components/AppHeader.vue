@@ -6,15 +6,17 @@ export default {
             searchTerm: ''
         }
     },
-    emits: ['searching-bar', 'form-submit']
+    emits: ['search-term', 'form-submit']
 }
 </script>
 
 <template>
-    <form @submit.prevent="$emit('form-submit')">
-        <input v-model.trim="searchTerm" @keyup="$emit('searching-bar', searchTerm)" type="text" placeholder="Search">
-        <button type="submit">Go</button>
-    </form>
+    <header>
+        <form @submit.prevent="$emit('form-submit')">
+            <input v-model.trim="searchTerm" @keyup="$emit('search-term', searchTerm)" type="text" placeholder="Search">
+            <button type="submit">Go</button>
+        </form>
+    </header>
 </template>
 
 
