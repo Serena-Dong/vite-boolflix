@@ -15,9 +15,9 @@ export default {
             const flags = ['it', 'en']
             return flags.includes(this.content.original_language)
         },
-        imgSrc() {
-            const url = "../assets/img/" + this.content.original_language + ".png";
-            return url
+        flagSrc() {
+            const url = new URL(`../assets/img/${this.content.original_language}.png`, import.meta.url);
+            return url.href
         }
     }
 }
@@ -28,8 +28,8 @@ export default {
         <li>{{ title }}</li>
         <li>{{ originalTitle }} </li>
         <li>
-            <img v-if="hasFlag" :src="imgSrc">
-            <p v-else></p>
+            <img v-if="hasFlag" :src="flagSrc" :alt="this.content.original_language">
+            <p v-else>{{ this.content.original_language }}</p>
         </li>
         <li>{{ content.vote_average }}</li>
 
