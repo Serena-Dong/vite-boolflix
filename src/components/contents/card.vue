@@ -54,9 +54,8 @@ export default {
                 <img v-if="hasFlag" :src="flagSrc" :alt="this.content.original_language">
                 <p v-else>{{ this.content.original_language }}</p>
             </li>
-            <li>{{ rating }}
-
-            </li>
+            <li>{{ rating }}</li>
+            <li>{{ this.content.overview }}</li>
         </div>
 
     </ul>
@@ -65,14 +64,21 @@ export default {
 <style lang="scss">
 .details {
     display: block;
-    width: 320px;
+    width: 340px;
     height: 500px;
-    background-color: white;
+    background-color: black;
+    border: 2px white solid;
+
+    margin-left: 1rem;
 }
 
 .details>*,
 h2,
 p {
-    color: black;
+    color: white;
+}
+
+.details img {
+    width: 15%
 }
 </style>
