@@ -31,6 +31,10 @@ export default {
             const url = api.imgBaseUri + size + this.content.poster_path;
 
             return url
+        },
+        vote() {
+            const finalVote = ((Math.floor(this.content.vote_average)) * 5) / 10
+            return finalVote
         }
     }
 }
@@ -39,13 +43,15 @@ export default {
 <template>
     <ul>
         <li><img :src="imgSrc" :alt="title"></li>
-        <li>{{ title }}</li>
+        <li>
+            <h2>{{ title }}</h2>
+        </li>
         <li>{{ originalTitle }} </li>
         <li>
             <img v-if="hasFlag" :src="flagSrc" :alt="this.content.original_language">
             <p v-else>{{ this.content.original_language }}</p>
         </li>
-        <li>{{ content.vote_average }}</li>
+        <li>{{ vote }}</li>
 
     </ul>
 </template>
