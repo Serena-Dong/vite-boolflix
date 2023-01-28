@@ -25,12 +25,20 @@ ul li {
     margin: 1rem;
 }
 
+li,
+a,
+p,
+h1,
+h2,
+h3 {
+    color: white;
+}
+
 /* UTILS */
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
 
-    display: flex;
 
 }

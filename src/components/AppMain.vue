@@ -18,21 +18,21 @@ export default {
 
 <template>
     <main>
+        <div class="container">
+            <!-- MOVIE SECTION -->
+            <h1>Movies</h1>
+            <card v-for="movie in store.movies" :key="movie.id" :content="movie"></card>
 
-        <!-- MOVIE SECTION -->
-        <h1>Movies</h1>
-        <card v-for="movie in store.movies" :key="movie.id" :content="movie"></card>
+            <!-- TV SERIES SECTION -->
+            <h1>TV Series</h1>
+            <card v-for="serie in store.series" :key="serie.id" :content="serie"></card>
 
-        <!-- TV SERIES SECTION -->
-        <h1>TV Series</h1>
-        <card v-for="serie in store.series" :key="serie.id" :content="serie"></card>
-
+        </div>
     </main>
 </template>
 
-
-
-
-<style>
-
+<style scoped>
+main {
+    background-color: rgb(28, 28, 28);
+}
 </style>
