@@ -33,7 +33,7 @@ export default {
             return url
         },
         rating() {
-            const ratingConverted = ((Math.floor(this.content.vote_average)) * 5) / 10
+            const ratingConverted = Math.floor(((this.content.vote_average) * 5) / 10)
             return ratingConverted
         }
     }
@@ -54,7 +54,7 @@ export default {
                 <img v-if="hasFlag" :src="flagSrc" :alt="this.content.original_language">
                 <p v-else>{{ this.content.original_language }}</p>
             </li>
-            <li>{{ rating }}</li>
+            <li>Ratings: {{ rating }}</li>
             <li>{{ this.content.overview }}</li>
         </div>
 
