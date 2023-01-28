@@ -32,9 +32,9 @@ export default {
 
             return url
         },
-        vote() {
-            const finalVote = ((Math.floor(this.content.vote_average)) * 5) / 10
-            return finalVote
+        rating() {
+            const ratingConverted = ((Math.floor(this.content.vote_average)) * 5) / 10
+            return ratingConverted
         }
     }
 }
@@ -51,7 +51,7 @@ export default {
             <img v-if="hasFlag" :src="flagSrc" :alt="this.content.original_language">
             <p v-else>{{ this.content.original_language }}</p>
         </li>
-        <li>{{ vote }}</li>
+        <li>{{ rating }}</li>
 
     </ul>
 </template>
