@@ -53,5 +53,6 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 2%;
 }
 </style>

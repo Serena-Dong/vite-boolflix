@@ -27,10 +27,13 @@ export default {
             return url.href
         },
         imgSrc() {
-            const size = 'w342/';
-            const url = api.imgBaseUri + size + this.content.poster_path;
+            const placeholder = 'https://www.altavod.com/assets/images/poster-placeholder.png'
 
-            return url
+            const size = 'w300/';
+
+            if (!this.content.poster_path) return placeholder;
+
+            return api.imgBaseUri + size + this.content.poster_path
         },
         rating() {
             return Math.ceil(this.content.vote_average / 2)
@@ -41,6 +44,7 @@ export default {
             let starClass = n <= this.rating ? 'fa-solid' : 'fa-regular';
 
             return starClass + ' fa-star';
+
         }
     }
 }
@@ -67,22 +71,31 @@ export default {
     </ul>
 </template>
 
-<style lang="scss">
-.poster {
+<style lang="scss" scoped>
+#poster {
 
     height: 500px;
+    position: relative;
+
+}
+
+#poster li a .img {
+
+    &:hover {
+        opacity: 0%;
+    }
 }
 
 
-
 .details {
-    width: 340px;
-    height: 480px;
+    width: 300px;
+    height: 425px;
     background-color: black;
     border: 2px white solid;
     overflow: auto;
 
-    margin-left: 1rem;
+    position: absolute;
+    top: 10px;
 
 }
 
