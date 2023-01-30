@@ -52,5 +52,6 @@ h1 {
 .card-box {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 </style>

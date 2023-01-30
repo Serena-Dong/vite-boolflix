@@ -33,8 +33,14 @@ export default {
             return url
         },
         rating() {
-            const ratingConverted = Math.floor(((this.content.vote_average) * 5) / 10)
-            return ratingConverted
+            return Math.ceil(this.content.vote_average / 2)
+        }
+    },
+    methods: {
+        setStar(n) {
+            let starClass = n <= this.rating ? 'fa-solid' : 'fa-regular';
+
+            return starClass + 'fa-star';
         }
     }
 }
@@ -42,8 +48,8 @@ export default {
 
 <template>
     <ul>
-        <div class="poster">
-            <li><a href=""><img :src="imgSrc" :alt="title"></a></li>
+        <div id="poster">
+            <li><a href=""><img class="img" :src="imgSrc" :alt="title"></a></li>
         </div>
         <div class="details">
             <li>
@@ -55,6 +61,7 @@ export default {
                 <p v-else>{{ this.content.original_language }}</p>
             </li>
             <li>Ratings: {{ rating }}</li>
+            <li><i v-for="n in 5" :class="setStar(n)"></i></li>
             <li>{{ this.content.overview }}</li>
         </div>
 
@@ -62,14 +69,22 @@ export default {
 </template>
 
 <style lang="scss">
-.details {
-    display: block;
-    width: 340px;
+.poster {
+
     height: 500px;
+}
+
+
+
+.details {
+    width: 340px;
+    height: 480px;
     background-color: black;
     border: 2px white solid;
+    overflow: auto;
 
     margin-left: 1rem;
+
 }
 
 .details>*,
