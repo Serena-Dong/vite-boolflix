@@ -40,7 +40,7 @@ export default {
         setStar(n) {
             let starClass = n <= this.rating ? 'fa-solid' : 'fa-regular';
 
-            return starClass + 'fa-star';
+            return starClass + ' fa-star';
         }
     }
 }
@@ -60,8 +60,7 @@ export default {
                 <img v-if="hasFlag" :src="flagSrc" :alt="this.content.original_language">
                 <p v-else>{{ this.content.original_language }}</p>
             </li>
-            <li>Ratings: {{ rating }}</li>
-            <li><i v-for="n in 5" :class="setStar(n)"></i></li>
+            <li>Ratings: <i v-for="n in 5" :class="setStar(n)"></i></li>
             <li>{{ this.content.overview }}</li>
         </div>
 
