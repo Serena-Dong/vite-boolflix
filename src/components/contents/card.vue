@@ -51,61 +51,87 @@ export default {
 </script>
 
 <template>
-    <ul>
-        <div id="poster">
-            <li><a href=""><img class="img" :src="imgSrc" :alt="title"></a></li>
-        </div>
-        <div class="details">
-            <li>
-                <h2>{{ title }}</h2>
-            </li>
-            <li>{{ originalTitle }} </li>
-            <li>
-                <img v-if="hasFlag" :src="flagSrc" :alt="this.content.original_language">
-                <p v-else>{{ this.content.original_language }}</p>
-            </li>
-            <li>Ratings: <i v-for="n in 5" :class="setStar(n)"></i></li>
-            <li>{{ this.content.overview }}</li>
-        </div>
+    <div id="poster" class="col-12">
+        <img class="poster-img" :src="imgSrc" :alt="title">
 
-    </ul>
+        <div id="card" class="col-12">
+            <div class="content-container">
+                <h2>{{ title }}</h2>
+                <h6><i>{{ originalTitle }}</i></h6>
+                <div class="flag-container">
+                    <img v-if="hasFlag" :src="flagSrc" :alt="this.content.original_language">
+                    <p v-else>{{ this.content.original_language }}</p>
+                </div>
+                <p>Ratings: <i v-for="n in 5" :class="setStar(n)"></i></p>
+                <p>{{ this.content.overview }}</p>
+            </div>
+        </div>
+    </div>
 </template>
 
 <style lang="scss" scoped>
 #poster {
-
     height: 500px;
+    width: 30%;
     position: relative;
+    cursor: pointer;
+
+    margin-bottom: 4rem;
+
+    @media screen and (max-width: 560px) {
+        width: 100%;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
 }
 
-#poster li a .img {
+#card {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
 
-    &:hover {
-        opacity: 0%;
+    color: #FFFFFF;
+    border: 3px solid #FFFFFF;
+
+    position: absolute;
+    top: 0;
+
+    visibility: hidden;
+
+    &>* {
+        margin-bottom: 1rem;
+    }
+
+    .content-container {
+        padding: 1rem;
+
+        &>* {
+            margin-bottom: 0.5rem;
+        }
+
+        .flag-container {
+            width: 30px;
+        }
     }
 }
 
+#poster:hover {
+    .poster-img {
+        filter: blur(5px);
+        transition: filter 0.1s ease-in-out;
+    }
 
-.details {
-    width: 300px;
-    height: 425px;
-    background-color: black;
-    border: 2px white solid;
-    overflow: auto;
+    #card {
+        visibility: visible;
+        background-color: rgba(61, 61, 61, 0.775);
+        transition: visibility 5s ease-in-out;
 
-    position: absolute;
-    top: 10px;
+    }
 
-}
-
-.details>*,
-h2,
-p {
-    color: white;
-}
-
-.details img {
-    width: 15%
 }
 </style>

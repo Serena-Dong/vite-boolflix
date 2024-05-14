@@ -15,18 +15,20 @@ export default {
         <div class="container">
 
             <!-- LOGO -->
-            <div class="logo">
+            <div class="logo col-12 col-md-4 ">
                 <a href="">
                     <h1>B O O L F L I X</h1>
                 </a>
             </div>
 
             <!-- SEARCH-BAR  -->
-            <form @submit.prevent="$emit('form-submit')">
-                <input v-model.trim="searchTerm" @keyup="$emit('search-term', searchTerm)" type="text"
-                    placeholder="Search">
-                <button type="submit">Go</button>
-            </form>
+            <div class="search-bar col-12 col-md-3">
+                <form @submit.prevent="$emit('form-submit')">
+                    <input v-model.trim="searchTerm" @keyup="$emit('search-term', searchTerm)" type="text"
+                        placeholder="Search">
+                    <button type="submit">Go</button>
+                </form>
+            </div>
 
         </div>
     </header>
@@ -35,50 +37,67 @@ export default {
 
 
 
-<style scoped>
+<style lang="scss" scoped>
 header {
     background-color: black;
-}
+    min-height: 10vh;
+    padding: 1rem;
 
-h1 {
-    color: red;
-}
-
-.container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    height: 100px;
 
-    padding: 0 2rem 0;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
 
-}
 
-input,
-button {
-    color: white;
-    background-color: rgb(0, 0, 0);
-    border: 2px white solid;
-    border-radius: 0.5rem;
+        .logo h1 {
+            color: red;
+        }
 
-}
+        .search-bar {
 
-input {
-    width: 10rem;
-    height: 2rem;
+            input,
+            button {
+                color: white;
+                background-color: rgb(0, 0, 0);
+                border: 2px white solid;
+                border-radius: 0.5rem;
 
-    padding: 0.5rem;
-    margin-right: 0.3rem;
+            }
 
-}
+            input {
+                width: 75%;
+                height: 2rem;
 
-button {
-    width: 3rem;
-    height: 2rem;
-    cursor: pointer;
-}
+                padding: 0.5rem;
+                margin-right: 0.3rem;
 
-button:hover {
-    background-color: rgb(67, 67, 67);
+            }
+
+            button {
+                width: 3rem;
+                height: 2rem;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: rgb(67, 67, 67);
+            }
+        }
+
+        @media screen and (max-width: 560px) {
+            flex-direction: column;
+            justify-content: center;
+
+            .logo h1,
+            .search-bar {
+                text-align: center;
+            }
+        }
+
+    }
 }
 </style>

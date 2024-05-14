@@ -18,18 +18,23 @@ export default {
 
 <template>
     <main>
-        <div class="container padding-y">
+        <div class="content container">
             <!-- MOVIE SECTION -->
-            <h1>Movies</h1>
+            <h1 v-if="store.movies.length > 0">MOVIES</h1>
             <div class="card-box container">
                 <card v-for="movie in store.movies" :key="movie.id" :content="movie"></card>
             </div>
 
             <!-- TV SERIES SECTION -->
-            <h1>TV Series</h1>
+            <h1 v-if="store.movies.length > 0">TV SERIES</h1>
             <div class="card-box container">
                 <card v-for="serie in store.series" :key="serie.id" :content="serie"></card>
             </div>
+        </div>
+
+        <!-- Text to show when there is nothing yet -->
+        <div class="text container">
+            <h3>There is nothing...yet!</h3>
         </div>
     </main>
 </template>
@@ -38,21 +43,35 @@ export default {
 main {
     background-color: rgb(28, 28, 28);
     min-height: 90vh;
+    padding: 1rem;
 
-}
+    .content {
+        @media screen and (max-width: 560px) {
+            h1 {
+                text-align: center;
+            }
+        }
 
-.padding-y {
-    padding: 0 2rem 0;
-}
+        h1 {
+            padding: 1rem;
+        }
 
-h1 {
-    padding: 1rem 0 1rem;
-}
+        .card-box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2%;
+        }
+    }
 
-.card-box {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2%;
+    .text {
+        height: 70vh;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
 }
 </style>
