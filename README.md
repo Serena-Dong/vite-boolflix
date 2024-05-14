@@ -1,7 +1,35 @@
-# Vue 3 + Vite
+# ✏️ Boolflix Project
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Welcome to the Boolflix WebApp!
 
-## Recommended IDE Setup
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## 📜 Description
+Boolflix is a small single-page application, visually inspired by Netflix, which utilizes The Movie DB's REST APIs to display movie and TV series information on screen, starting from a search key. The project was created during the Boolean Boothcamp,
+
+## 🛠️ Technologies Used
+
+
+- ![Static Badge](https://img.shields.io/badge/Vite-white?logo=vite): A tool for rapid creation and development via CLI of projects based on Vue <br>
+- ![Static Badge](https://img.shields.io/badge/VueJs-mint?logo=vuejs): The great front-end framework designed for creating user interfaces and single-page applications.
+- ![Static Badge](https://img.shields.io/badge/JavaScript-yellow?logo=javascript): The core programming language for building the application's functionality. <br>
+- ![Static Badge](https://img.shields.io/badge/Bootstrap-purple?logo=bootstrap): For responsive and visually appealing design elements.  <br>
+- ![Static Badge](https://img.shields.io/badge/SASS-pink?logo=sass): To enhance and customize the application's styles.
+
+
+## 💻 Getting Started
+
+To run the project locally simply, ```git clone``` and
+
+```
+npm i
+npm run dev 
+```
+
+## 🤝 Contribution
+
+Contributions to this project are welcome. If you want to contribute new features, improve the design, or fix issues, please feel free to submit pull requests.
+
+## 📬 Contact
+
+- Developer: Serena Dong <br>
+- Email: [serenadong@outlook.it]
