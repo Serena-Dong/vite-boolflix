@@ -1,4 +1,4 @@
-# ✏️ Boolflix Project
+# 📺 Boolflix Project
 
 Welcome to the Boolflix WebApp!
 
