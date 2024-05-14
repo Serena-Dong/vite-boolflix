@@ -26,14 +26,14 @@ export default {
             </div>
 
             <!-- TV SERIES SECTION -->
-            <h1 v-if="store.movies.length > 0">TV SERIES</h1>
+            <h1 v-if="store.series.length > 0">TV SERIES</h1>
             <div class="card-box container">
                 <card v-for="serie in store.series" :key="serie.id" :content="serie"></card>
             </div>
         </div>
 
         <!-- Text to show when there is nothing yet -->
-        <div class="text container">
+        <div v-if="store.movies.length == 0" class="text container">
             <h3>There is nothing...yet!</h3>
         </div>
     </main>
