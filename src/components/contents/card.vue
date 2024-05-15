@@ -130,7 +130,7 @@ export default {
 
     #card {
         visibility: visible;
-        background-color: $b-card(61, 61, 61, 0.775);
+        background-color: $b-card;
         transition: visibility 5s ease-in-out;
 
     }
