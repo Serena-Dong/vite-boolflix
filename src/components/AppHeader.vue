@@ -55,6 +55,8 @@ header {
 
         .logo h1 {
             color: red;
+            margin-bottom: 0;
+
         }
 
         .search-bar {
@@ -95,6 +97,7 @@ header {
             .logo h1,
             .search-bar {
                 text-align: center;
+                margin-bottom: 1rem;
             }
         }
 
