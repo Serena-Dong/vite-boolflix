@@ -70,6 +70,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@import "../../assets/scss/partials/variables";
+
 #poster {
     height: 500px;
     width: 30%;
@@ -95,8 +97,8 @@ export default {
     width: 100%;
     overflow: auto;
 
-    color: #FFFFFF;
-    border: 3px solid #FFFFFF;
+    color: $b-white;
+    border: 3px solid $b-white;
 
     position: absolute;
     top: 0;
@@ -128,7 +130,7 @@ export default {
 
     #card {
         visibility: visible;
-        background-color: rgba(61, 61, 61, 0.775);
+        background-color: $b-card(61, 61, 61, 0.775);
         transition: visibility 5s ease-in-out;
 
     }
