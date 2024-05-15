@@ -29,7 +29,9 @@ export default {
     },
     methods: {
         updateTerm(searchTerm) {
-            this.term = searchTerm
+            this.term = searchTerm;
+
+            this.searchContent();
         },
         searchContent() {
             if (!this.term) {
@@ -55,6 +57,4 @@ export default {
     <AppMain></AppMain>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

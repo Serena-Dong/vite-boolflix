@@ -15,14 +15,25 @@ export default {
         <div class="container">
 
             <!-- LOGO -->
-            <div class="logo col-12 col-md-4 ">
-                <a href="">
-                    <h1>B O O L F L I X</h1>
-                </a>
+            <div class="navbar col-12 col-md-9">
+                <div class="logo">
+                    <a href="">
+                        <h1>B O O L F L I X</h1>
+                    </a>
+                </div>
+                <ul class="d-flex">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">TV Shows</a></li>
+                    <li><a href="">Movies</a></li>
+                    <li><a href="">New & Popular</a></li>
+                    <li><a href="">My list</a></li>
+                    <li><a href="">Languages</a></li>
+                </ul>
             </div>
 
+
             <!-- SEARCH-BAR  -->
-            <div class="search-bar col-12 col-md-3">
+            <div class="search-bar col-12 col-md-2">
                 <form @submit.prevent="$emit('form-submit')">
                     <input v-model.trim="searchTerm" @keyup="$emit('search-term', searchTerm)" type="text"
                         placeholder="Search">
@@ -53,10 +64,14 @@ header {
         flex-wrap: wrap;
 
 
-        .logo h1 {
-            color: red;
-            margin-bottom: 0;
+        .navbar {
+            display: flex;
+            justify-content: flex-start;
 
+            .logo h1 {
+                color: red;
+                margin-bottom: 0;
+            }
         }
 
         .search-bar {

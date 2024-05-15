@@ -1,23 +1,23 @@
 <script>
 import { store } from '../data/store';
 import card from '../components/contents/card.vue';
+import Carousel from '../components/contents/Carousel.vue';
 
 
 export default {
     name: 'AppMain',
-    components: { card },
+    components: { card, Carousel },
     data() {
         return {
-            store,
-            searchTerm: ''
+            store
         }
-    },
-    emits: ['searching-bar', 'form-submit']
+    }
 }
 </script>
 
 <template>
     <main>
+        <!-- <Carousel></Carousel> -->
         <div class="content container">
             <!-- MOVIE SECTION -->
             <h1 v-if="store.movies.length > 0">MOVIES</h1>
