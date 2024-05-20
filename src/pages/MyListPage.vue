@@ -1,15 +1,11 @@
 <script>
 export default {
-    name: 'Item'
+    name: 'MyListPage'
 }
 </script>
-
 <template>
-    <section class="container">
-        <h1>Item</h1>
-    </section>
+    <h1>My List</h1>
 </template>
-
 <style lang="scss" scoped>
 @import "./../assets/scss/partials/variables";
 </style>

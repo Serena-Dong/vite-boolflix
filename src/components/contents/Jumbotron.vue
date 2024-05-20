@@ -1,15 +1,15 @@
 <script>
 export default {
-    name: 'Item'
+    name: 'Jumbotron'
 }
 </script>
 
 <template>
     <section class="container">
-        <h1>Item</h1>
+        <h1>Jumbotron</h1>
     </section>
 </template>
 
 <style lang="scss" scoped>
-@import "./../assets/scss/partials/variables";
+@import "./../../assets/scss/partials/variables";
 </style>

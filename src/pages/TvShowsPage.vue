@@ -1,15 +1,11 @@
 <script>
 export default {
-    name: 'Item'
+    name: 'TVShowsPage'
 }
 </script>
-
 <template>
-    <section class="container">
-        <h1>Item</h1>
-    </section>
+    <h1>Tv Shows</h1>
 </template>
-
 <style lang="scss" scoped>
 @import "./../assets/scss/partials/variables";
 </style>
