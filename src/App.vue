@@ -5,10 +5,11 @@ import { api } from './data/index'
 
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
+import AppFooter from './components/AppFooter.vue';
 
 export default {
     name: 'Boolflix',
-    components: { AppHeader, AppMain },
+    components: { AppHeader, AppMain, AppFooter },
     data() {
         return {
             store,
@@ -30,7 +31,6 @@ export default {
     methods: {
         updateTerm(searchTerm) {
             this.term = searchTerm;
-
             this.searchContent();
         },
         searchContent() {
@@ -55,6 +55,9 @@ export default {
 <template>
     <AppHeader @search-term="updateTerm" @form-submit="searchContent"></AppHeader>
     <AppMain></AppMain>
+    <AppFooter></AppFooter>
+
+
 </template>
 
 <style scoped></style>
