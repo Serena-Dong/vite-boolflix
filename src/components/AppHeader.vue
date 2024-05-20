@@ -17,27 +17,27 @@ export default {
             <!-- LOGO -->
             <div class="navbar col-12 col-md-9">
                 <div class="logo">
-                    <a href="">
+                    <a href="/">
                         <h1>B O O L F L I X</h1>
                     </a>
                 </div>
                 <ul class="d-flex">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">TV Shows</a></li>
-                    <li><a href="">Movies</a></li>
-                    <li><a href="">New & Popular</a></li>
-                    <li><a href="">My list</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="tv-shows">TV Shows</a></li>
+                    <li><a href="movies">Movies</a></li>
+                    <li><a href="new-and-popular">New & Popular</a></li>
+                    <li><a href="my-list">My list</a></li>
                     <li><a href="">Languages</a></li>
                 </ul>
             </div>
 
 
             <!-- SEARCH-BAR  -->
-            <div class="search-bar col-12 col-md-2">
+            <div class="search-bar col-12 col-md-3">
                 <form @submit.prevent="$emit('form-submit')">
                     <input v-model.trim="searchTerm" @keyup="$emit('search-term', searchTerm)" type="text"
                         placeholder="Search">
-                    <button type="submit">Go</button>
+                    <button type="submit">Search</button>
                 </form>
             </div>
 
@@ -49,8 +49,10 @@ export default {
 
 
 <style lang="scss" scoped>
+@import "./../assets/scss/partials/variables";
+
 header {
-    background-color: black;
+    background-color: $b-black;
     min-height: 10vh;
     padding: 1rem;
 
@@ -69,7 +71,7 @@ header {
             justify-content: flex-start;
 
             .logo h1 {
-                color: red;
+                color: $b-red;
                 margin-bottom: 0;
             }
         }
@@ -79,8 +81,8 @@ header {
             input,
             button {
                 color: white;
-                background-color: rgb(0, 0, 0);
-                border: 2px white solid;
+                background-color: $b-black;
+                border: 2px $b-white solid;
                 border-radius: 0.5rem;
 
             }
