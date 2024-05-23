@@ -4,7 +4,7 @@ Welcome to the Boolflix WebApp!
 
 
 ## 📜 Description
-Boolflix is a small single-page application, visually inspired by Netflix, which utilizes The Movie DB's REST APIs to display movie and TV series information on screen, starting from a search key. The project was created during the Boolean Boothcamp,
+Boolflix is a small single-page application, visually inspired by Netflix, which utilizes The Movie DB's REST APIs to display movie and TV series information on screen, starting from a search key.
 
 ## 🛠️ Technologies Used
 
